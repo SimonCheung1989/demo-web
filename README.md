@@ -14,6 +14,7 @@
         #>openssl x509 -in domain.crt -signkey domain.key -x509toreq -out domain.csr
 
 ###Generating SSL Certificates
+
 1. Generating SSL Certificates
 
         #>openssl req -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt
