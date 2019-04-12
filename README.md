@@ -1,6 +1,6 @@
 # demo-web
 ## Public Key & Private Key & Certificates
-###Generting CSRs
+### Generting CSRs
 1. Generate a Private Key and a CSR
 
         #>openssl req -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
@@ -13,7 +13,7 @@
 
         #>openssl x509 -in domain.crt -signkey domain.key -x509toreq -out domain.csr
 
-###Generating SSL Certificates
+### Generating SSL Certificates
 
 1. Generating SSL Certificates
 
