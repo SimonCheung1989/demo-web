@@ -1,6 +1,6 @@
 # demo-web
 ## Public Key & Private Key & Certificates
-Generting CSRs
+###Generting CSRs
 1. Generate a Private Key and a CSR
 
         #>openssl req -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
@@ -13,7 +13,7 @@ Generting CSRs
 
         #>openssl x509 -in domain.crt -signkey domain.key -x509toreq -out domain.csr
 
-Generating SSL Certificates
+###Generating SSL Certificates
 1. Generating SSL Certificates
 
         #>openssl req -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt
@@ -26,7 +26,7 @@ Generating SSL Certificates
 
         #>openssl x509 -signkey domain.key -in domain.csr -req -days 365 -out domain.crt
 
-View Certificates
+###View Certificates
 1. View CSR Entries
 
         #>openssl req -text -noout -verify -in domain.csr
@@ -39,7 +39,7 @@ View Certificates
 
         #>openssl verify -verbose -CAFile ca.crt domain.crt
 
-Private Keys
+###Private Keys
 1. Create a Private Key
 
         #>openssl genrsa -des3 -out domain.key 2048
@@ -62,7 +62,7 @@ Private Keys
 
         #>openssl rsa -in encrypted.key -out decrypted.key
 
-Public Key
+###Public Key
 1. Generating Public Key from Private Key
 
         #>openssl rsa -in domain.key -pubout > publickey.pub
@@ -71,7 +71,7 @@ Public Key
 
         #>openssl x509 -in domain.crt -pubkey -noout > publickey.pub
 
-Convert Certificate Formats
+###Convert Certificate Formats
 1. Convert PEM to DER
 
         #>openssl x509 -in domain.crt -outform der -out domain.der
@@ -118,7 +118,7 @@ Convert Certificate Formats
 
         #>openssl rsa -in domain.key.pkcs8 -out domain.key.pkcs8.key
 
-OpenSSL Version
+###OpenSSL Version
 
         #>openssl version -a
     
