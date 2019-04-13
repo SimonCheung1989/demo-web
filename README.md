@@ -105,7 +105,13 @@
 7. Convert PKCS12 to JKS
 
         #>keytool -importkeystore -srckeystore domain.pfx -srcstoretype pkcs12 -destkeystore domain.jks
-
+    View JKS information
+    
+        #>keytool -v -list -keystore domain.jks
+    Generate JKS
+    
+        #>keytool -genkey -keyalg RSA -keypass 123456 -storepass changeit -keystore keystore.jks  #PKCS12 can't support different store & key pass, it will use the same password with store pass
+        
 8. Convert JKS to PKCS12
 
         #>keytool -v -importkeystore -srckeystore localhost.jks -destkeystore localhost.jks.pfx -deststoretype PKCS12
