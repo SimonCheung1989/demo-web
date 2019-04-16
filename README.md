@@ -75,6 +75,7 @@
 1. Convert PEM to DER
 
         #>openssl x509 -in domain.crt -outform der -out domain.der
+        #>openssl x509 -in domain.crt -outform der -out domain.cer
 
 2. Convert DER to PEM
 
@@ -128,3 +129,16 @@
 
         #>openssl version -a
     
+## Base64 & Binary
+### Convert
+
+1. Convert Base64 to Binary
+
+        #>openssl base64 -d -in domain.p12.base64 -out domain.p12
+        #>base64 -D domain.p12.base64 > domain.p12
+        
+2. Convert Binary to Base64
+
+        #>openssl base64 -in domain.p12 -out domain.p12.base64
+        #>base64 domain.p12 > domain.p12.base64
+
